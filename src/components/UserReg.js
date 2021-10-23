@@ -37,7 +37,7 @@ function UserReg() {
             upass: upass,
         }
 
-        axios.post('http://localhost:4500/user/register', userinfo)
+        axios.post('https://news-app-back.herokuapp.com/user/register', userinfo)
             .then(res => {
                 // console.log(res.data.message)
                 // setMessage('REGISTRATION SUCCESSFUL')

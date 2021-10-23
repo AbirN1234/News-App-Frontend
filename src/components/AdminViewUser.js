@@ -16,7 +16,7 @@ function AdminViewUser() {
     let admin = sessionStorage.getItem("admin");
 
     useEffect(() => {
-        axios.get('http://localhost:4500/admin/viewuser/')
+        axios.get('https://news-app-back.herokuapp.com/admin/viewuser/')
             .then(response => {
                 setUser(response.data);
             })
@@ -135,7 +135,7 @@ function AdminViewUser() {
 
     function activeUser(index) {
         var templist = [...user];
-        axios.put('http://localhost:4500/admin/useractive/' + templist[index]._id)
+        axios.put('https://news-app-back.herokuapp.com/admin/useractive/' + templist[index]._id)
             .then(response => {
                 templist[index].status = 1;
                 setUser(templist);
@@ -147,7 +147,7 @@ function AdminViewUser() {
     function deactivateUser(index) {
         var templist = [...user];
         // let remove = templist.splice(index, 1);
-        axios.put('http://localhost:4500/admin/userdeactive/' + templist[index]._id)
+        axios.put('https://news-app-back.herokuapp.com/admin/userdeactive/' + templist[index]._id)
             .then(response => {
                 templist[index].status = -1;
                 setUser(templist);
@@ -159,7 +159,7 @@ function AdminViewUser() {
     function delUser(index) {
         var templist = [...user];
         let remove = templist.splice(index, 1);
-        axios.delete('http://localhost:4500/admin/userdel/' + remove[0]._id)
+        axios.delete('https://news-app-back.herokuapp.com/admin/userdel/' + remove[0]._id)
             .then(response => {
                 setUser(templist);
             })
@@ -176,7 +176,7 @@ function AdminViewUser() {
     }
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        axios.get('http://localhost:4500/admin/viewuser/' + email)
+        axios.get('https://news-app-back.herokuapp.com/admin/viewuser/' + email)
             .then(response => {
                 setsearch(response.data)
             })

@@ -26,7 +26,7 @@ function UserLogin(props) {
             password: password,
         }
 
-        axios.post('http://localhost:4500/user/login', cred)
+        axios.post('https://news-app-back.herokuapp.com/user/login', cred)
             .then(res => {
                 // console.log(res);
                 // setMessage('LOGIN SUCCESSFUL')

@@ -17,7 +17,7 @@ function UserDelNews() {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         
-        axios.delete('http://localhost:4500/user/remove/' + nid)
+        axios.delete('https://news-app-back.herokuapp.com/user/remove/' + nid)
         .then(res => {
             console.log(res.data)
             setMessage('SUCCESSFULLY DELETED')

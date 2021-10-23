@@ -17,7 +17,7 @@ function AdminViewNews() {
     let admin = sessionStorage.getItem("admin");
 
     useEffect(() => {
-        axios.get('http://localhost:4500/admin/viewnews/')
+        axios.get('https://news-app-back.herokuapp.com/admin/viewnews/')
             .then(response => {
                 setNews(response.data);
             })
@@ -143,7 +143,7 @@ function AdminViewNews() {
 
     function approveNews(index) {
         var temp = [...news];
-        axios.put('http://localhost:4500/admin/newsapprove/' + temp[index]._id)
+        axios.put('https://news-app-back.herokuapp.com/admin/newsapprove/' + temp[index]._id)
             .then(response => {
                 console.log(response)
                 temp[index].status = 1
@@ -155,7 +155,7 @@ function AdminViewNews() {
     }
     function rejectNews(index) {
         var temp = [...news];
-        axios.put('http://localhost:4500/admin/newsreject/' + temp[index]._id)
+        axios.put('https://news-app-back.herokuapp.com/admin/newsreject/' + temp[index]._id)
             .then(response => {
                 // console.log(response)
                 temp[index].status = -1
@@ -168,7 +168,7 @@ function AdminViewNews() {
     function delNews(index) {
         var temp = [...news];
         let remove = temp.splice(index, 1);
-        axios.delete('http://localhost:4500/admin/newsdel/' + remove[0]._id)
+        axios.delete('https://news-app-back.herokuapp.com/admin/newsdel/' + remove[0]._id)
             .then(response => {
                 setNews(temp);
             })
@@ -184,7 +184,7 @@ function AdminViewNews() {
     }
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        axios.get('http://localhost:4500/admin/viewnews/' + email)
+        axios.get('https://news-app-back.herokuapp.com/admin/viewnews/' + email)
             .then(response => {
                 setsearch(response.data)
                 setMsg("Author Name : " + response.data[0].authorname)

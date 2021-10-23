@@ -12,7 +12,7 @@ function ReadMore() {
     const [newslist, setNewsList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4500/viewer/readmore/' + nid)
+        axios.get('https://news-app-back.herokuapp.com/viewer/readmore/' + nid)
             .then(response => {
                 setNewsList(response.data);
             })

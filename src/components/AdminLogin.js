@@ -23,7 +23,7 @@ function AdminLogin(props) {
             adminid: admin,
             adminpass: pass
         }
-        axios.post('http://localhost:4500/admin/login', cred)
+        axios.post('https://news-app-back.herokuapp.com/admin/login', cred)
             .then(res => {
                 if (res.data === 0) {
                     setMsg("Id or Password not Matched");

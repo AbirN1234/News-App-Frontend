@@ -16,7 +16,7 @@ function CatagorySrc(props) {
     // setCat(cata);
     function demo() {
         if (cata) {
-            axios.post('http://localhost:4500/viewer/catsrc/' + cata)
+            axios.post('https://news-app-back.herokuapp.com/viewer/catsrc/' + cata)
                 .then(res => {
                     setResult(res.data)
                     setMsg("Search results for " + cata)
@@ -38,7 +38,7 @@ function CatagorySrc(props) {
         evt.preventDefault();
 
 
-        axios.post('http://localhost:4500/viewer/catsrc/' + cat)
+        axios.post('https://news-app-back.herokuapp.com/viewer/catsrc/' + cat)
             .then(res => {
                 setResult(res.data)
                 setMsg("Search results for " + cat)

@@ -95,7 +95,7 @@ function UploadNews() {
                             authorname: name,
                             authoremail: authuser,
                         }
-                        axios.post('http://localhost:4500/user/upload', news)
+                        axios.post('https://news-app-back.herokuapp.com/user/upload', news)
                             .then(res => {
                                 // console.log(res.data);
                                 setMessage("News Added Successfully!!");

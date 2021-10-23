@@ -14,7 +14,7 @@ function UserViewNews() {
     let uid = sessionStorage.getItem('uid')
     // console.log(uid);
     useEffect(() => {
-        axios.get('http://localhost:4500/user/viewall/' + uid)
+        axios.get('https://news-app-back.herokuapp.com/user/viewall/' + uid)
             .then(response => {
                 setNewsList(response.data);
                 // console.log(response.data)
@@ -109,7 +109,7 @@ function UserViewNews() {
     function removeRow(index) {
         var templist = [...newslist];
         let remove = templist.splice(index, 1);
-        axios.delete('http://localhost:4500/user/remove/' + remove[0]._id)
+        axios.delete('https://news-app-back.herokuapp.com/user/remove/' + remove[0]._id)
             .then(res => {
                 console.log(res.data)
                 setMsg("News Deleted Succesfully.");

@@ -28,7 +28,7 @@ function Mailer(params) {
             subject: title,
             text: body,
         }
-        axios.post('http://localhost:4500/mailer/', mailer)
+        axios.post('https://news-app-back.herokuapp.com/mailer/', mailer)
             .then(response => {
                 console.log(response.data)
                 setMessage("Reply Sent Successfully")

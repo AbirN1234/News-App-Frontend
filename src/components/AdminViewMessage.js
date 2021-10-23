@@ -11,7 +11,7 @@ function AdminViewMessage(props) {
     let admin = sessionStorage.getItem('admin')
 
     useEffect(() => {
-        axios.get('http://localhost:4500/admin/viewmsg/')
+        axios.get('https://news-app-back.herokuapp.com/admin/viewmsg/')
             .then(response => {
                 setContact(response.data);
             })

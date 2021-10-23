@@ -30,7 +30,7 @@ function ContactUs() {
             vcomment: vcomment,
         }
 
-        axios.post('http://localhost:4500/viewer/contact', userinfo)
+        axios.post('https://news-app-back.herokuapp.com/viewer/contact', userinfo)
             .then(res => {
                 // console.log(res.data)
                 setMessage('MESSAGE SENT SUCCESSFULLY')

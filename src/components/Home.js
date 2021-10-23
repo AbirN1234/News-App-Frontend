@@ -14,7 +14,7 @@ function Home(props) {
 
     useEffect(() => {
         // 192.168.31.192
-        axios.get('http://localhost:4500/viewer/')
+        axios.get('https://news-app-back.herokuapp.com/viewer/')
             .then(response => {
                 if (response.data.length < 1) {
                     setMsg("No News is uploaded to the portal yet")
