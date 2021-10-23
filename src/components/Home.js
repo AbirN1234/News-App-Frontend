@@ -19,8 +19,8 @@ function Home(props) {
                 if (response.data.length < 1) {
                     setMsg("No News is uploaded to the portal yet")
                 }
-                else{
-                    console.log(response)
+                else {
+                    // console.log(response)
                     setNewsList(response.data);
                 }
             })
@@ -32,9 +32,9 @@ function Home(props) {
     function viewNews() {
         return newslist.map((currentrow, index) => {
             return (
-                <Col key={index} style={{ marginBottom: "1rem", width: "18rem" }}>
-                    <Card style={{ width: '18rem', height: "30rem" }}>
-                        <Card.Img variant="top" style={{ width: '18rem', height: "15rem", maxHeight: "13rem" }} src={currentrow.img_path} />
+                <Col key={index} style={{ marginBottom: "1rem" }}>
+                    <Card style={{ height: "30rem", width: '100%', minWidth: "21rem" }}>
+                        <Card.Img variant="top" style={{ width: '100%', height: "15rem", maxHeight: "13rem" }} src={currentrow.img_path} />
                         <small className="text-muted"> {currentrow.catagory.map((cr, ind) => { return (<Link to={`/catsrc/${cr}`} key={ind}> {cr}</Link>) })}</small>
                         <Card.Body>
                             <Card.Title style={{ maxHeight: "26px", marginTop: "-20px", overflow: "hidden" }}>
@@ -65,7 +65,7 @@ function Home(props) {
         <div style={{ backgroundColor: "#E8DDE3" }}>
             <MyNavbar />
             <br />
-            <h3 style={{color:"red"}}>{msg}</h3>
+            <h3 style={{ color: "red" }}>{msg}</h3>
             <Container>
                 <Row  >
                     {viewNews()}

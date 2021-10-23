@@ -20,7 +20,7 @@ function CatagorySrc(props) {
                 .then(res => {
                     setResult(res.data)
                     setMsg("Search results for " + cata)
-                    
+
                 })
                 .catch(err => {
                     // setMsg(err.message)
@@ -59,15 +59,15 @@ function CatagorySrc(props) {
     function viewNews() {
         return result.map((currentrow, index) => {
             return (
-                <Col key={index} style={{ marginBottom: "1rem", width: "18rem" }}>
-                    <Card style={{ width: '18rem', height: "30rem" }}>
-                        <Card.Img variant="top" style={{ width: '18rem', height: "15rem", maxHeight: "13rem" }} src={currentrow.img_path} />
-                        <small className="text-muted"> {currentrow.catagory.map((cr,ind)=>{ return (<Link to={`/catsrc/${cr}`} key={ind}> {cr}</Link>) })}</small>
+                <Col key={index} style={{ marginBottom: "1rem" }}>
+                    <Card style={{ height: "30rem", width: '100%', minWidth: "21rem" }}>
+                        <Card.Img variant="top" style={{ width: '100%', height: "15rem", maxHeight: "13rem" }} src={currentrow.img_path} />
+                        <small className="text-muted"> {currentrow.catagory.map((cr, ind) => { return (<Link to={`/catsrc/${cr}`} key={ind}> {cr}</Link>) })}</small>
                         <Card.Body>
-                            <Card.Title style={{ maxHeight: "26px", marginTop: "-20px", overflow: "hidden" }}>
+                            <Card.Title style={{ maxHeight: "26px", marginTop: "-20px", overflow: "hidden", textAlign: "justify" }}>
                                 {currentrow.title}
                             </Card.Title>
-                            <Card.Body style={{ maxHeight: "7rem", marginTop: "-25px", overflow: "hidden" }}>
+                            <Card.Body style={{ maxHeight: "7rem", marginTop: "-25px", overflow: "hidden", textAlign: "justify" }}>
                                 {currentrow.descrip}
                             </Card.Body>
                             <Card.Footer>
@@ -85,7 +85,7 @@ function CatagorySrc(props) {
     function readmore(index) {
         var temp = [...result];
         // localStorage.setItem('readmore', temp[index]._id)
-        props.history.push('/readmore/'+temp[index]._id);
+        props.history.push('/readmore/' + temp[index]._id);
     }
 
     return (
