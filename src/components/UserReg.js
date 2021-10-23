@@ -73,27 +73,27 @@ function UserReg() {
 
                     <div className="form-group">
                         <label>Your Name</label>
-                        <input type="text" className="form-control" placeholder="Name" name="name" value={uname} onChange={onChangeUserName} />
+                        <input type="text" className="form-control" placeholder="Name" name="name" value={uname} onChange={onChangeUserName} required/>
                     </div>
 
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Enter email" name="email" value={uemail} onChange={onChangeUserEmail} />
+                        <input type="email" className="form-control" placeholder="Enter email" name="email" value={uemail} onChange={onChangeUserEmail} required/>
                     </div>
 
                     <div className="form-group">
                         <label>Contact No</label>
-                        <input type="tel" className="form-control" placeholder="Contact no" name="mobile" value={umobile} onChange={onChangeUserMobile} />
+                        <input type="tel" className="form-control" placeholder="Contact no" name="mobile" value={umobile} onChange={onChangeUserMobile} required/>
                     </div>
 
                     <div className="form-group">
                         <label>Date of Birth</label>
-                        <input type="date" className="form-control" placeholder="Date of Birth" name="dob" value={udob} onChange={onChangeUserDOB} />
+                        <input type="date" className="form-control" placeholder="Date of Birth" name="dob" value={udob} onChange={onChangeUserDOB} required/>
                     </div>
 
                     <div className="form-group">
                         <label>Gender</label>
-                        <select value={ugender} onChange={onChangeUserGender} className="form-control" name="Gender">
+                        <select value={ugender} onChange={onChangeUserGender} className="form-control" name="Gender" required>
                             <option selected disabled></option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -103,7 +103,7 @@ function UserReg() {
 
                     <div className="form-group">
                         <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} />
+                        <input type="password" className="form-control" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} required/>
                     </div>
 
                     <input type="submit" value="REGISTER" className="btn btn-danger" />
