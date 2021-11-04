@@ -7,7 +7,7 @@ import Home from './components/Home';
 import UserLogin from './components/UserLogin';
 import UserReg from './components/UserReg';
 import Logout from './components/Logout';
-import UserPanel from './components/UserPanel';
+// import UserPanel from './components/UserPanel';
 import UploadNews from './components/UploadNews';
 import UserViewNews from './components/UserViewsNews';
 import UserDelNews from './components/UserDelNews';
@@ -30,7 +30,7 @@ function App() {
                     <Route exact path='/' component={Home} />
                     <Route path='/userreg' component={UserReg} />
                     <Route path='/userlogin' component={UserLogin} />
-                    <Route path='/userpanel' component={UserPanel} />
+                    {/* <Route path='/userpanel' component={UserPanel} /> */}
                     <Route path='/uploadnews' component={UploadNews} />
                     <Route path='/viewnews' component={UserViewNews} />
                     <Route path='/delnews' component={UserDelNews} />

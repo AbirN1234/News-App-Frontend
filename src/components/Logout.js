@@ -9,6 +9,7 @@ function Logout() {
         sessionStorage.removeItem('user')
         sessionStorage.removeItem('name')
         sessionStorage.removeItem('uid')
+        sessionStorage.removeItem('status')
     }
     else if (admin) {
         sessionStorage.removeItem('admin')

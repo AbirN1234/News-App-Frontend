@@ -3,7 +3,7 @@ import 'react-bootstrap';
 import './login.css';
 import axios from 'axios';
 import MyNavbar from "./Navbar";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, FormGroup, InputGroup, Row } from "react-bootstrap";
 
 function UserReg() {
 
@@ -55,6 +55,14 @@ function UserReg() {
         setUserGender('')
         setUserPass('')
     }
+    function myFunction() {
+        var x = document.getElementById("psw");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
 
     return (
         <div style={{ backgroundColor: "#F0EEBA" }}>
@@ -68,56 +76,61 @@ function UserReg() {
                     <Col md={2}>
                     </Col>
                     <Col md={8}>
-                        <form className="login-form" onSubmit={handleSubmit}>
-                    <h3>Register</h3>
+                        <Form className="login-form" onSubmit={handleSubmit}>
+                            <h3>Register</h3>
 
-                    <div className="form-group">
-                        <label>Your Name</label>
-                        <input type="text" className="form-control" placeholder="Name" name="name" value={uname} onChange={onChangeUserName} required/>
-                    </div>
+                            <div className="form-group">
+                                <label>Your Name</label>
+                                <input type="text" className="form-control" pattern="[A-Z][a-z].{,30}" maxLength={50} placeholder="Name" name="name" value={uname} onChange={onChangeUserName} required />
+                            </div>
 
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Enter email" name="email" value={uemail} onChange={onChangeUserEmail} required/>
-                    </div>
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxLength={50} placeholder="Enter email" name="email" value={uemail} onChange={onChangeUserEmail} required />
+                            </div>
+                            <FormGroup>
+                                <label>Contact No</label>
+                                <InputGroup>
+                                    <InputGroup.Text>+91</InputGroup.Text>
+                                    <input type="tel" pattern="[0-9]{10}" maxLength={10} aria-describedby="contact"
+                                        className="form-control" placeholder="Contact no" name="mobile" value={umobile} onChange={onChangeUserMobile} required />
+                                </InputGroup>
+                            </FormGroup>
+                            <div className="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" className="form-control" placeholder="Date of Birth" value={udob} onChange={onChangeUserDOB} required />
+                            </div>
 
-                    <div className="form-group">
-                        <label>Contact No</label>
-                        <input type="tel" className="form-control" placeholder="Contact no" name="mobile" value={umobile} onChange={onChangeUserMobile} required/>
-                    </div>
+                            <div className="form-group">
+                                <label>Gender</label>
+                                <select value={ugender} onChange={onChangeUserGender} className="form-control" name="Gender" required>
+                                    <option selected disabled></option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
 
-                    <div className="form-group">
-                        <label>Date of Birth</label>
-                        <input type="date" className="form-control" placeholder="Date of Birth" name="dob" value={udob} onChange={onChangeUserDOB} required/>
-                    </div>
+                            <div className="form-group">
+                                <label>Password</label>
+                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}" maxLength={30} className="form-control" id="psw" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} required />
+                                {/* <input type="checkbox" onClick={() => myFunction()} />Show Password */}
+                                <Form.Check
+                                    type="switch"
+                                    id="custom-switch"
+                                    label="Show/Hide Password"
+                                    onClick={() => myFunction("myInput")}
+                                />
+                            </div>
 
-                    <div className="form-group">
-                        <label>Gender</label>
-                        <select value={ugender} onChange={onChangeUserGender} className="form-control" name="Gender" required>
-                            <option selected disabled></option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
+                            <input type="submit" value="REGISTER" className="btn btn-success" />
 
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} required/>
-                    </div>
-
-                    <input type="submit" value="REGISTER" className="btn btn-danger" />
-
-                    {/* <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={userData}>Register</button> */}
-                    {/* <p className="forgot-password text-right">
-                    Already registered <Link to="/login">log in?</Link>
-                </p> */}
-                </form>
+                        </Form>
                     </Col>
                     <Col md={2}>
                     </Col>
                 </Row>
-                
+
                 <br />
                 <br />
             </Container>

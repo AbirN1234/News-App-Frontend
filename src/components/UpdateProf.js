@@ -17,18 +17,18 @@ function UpdateProf() {
     const [umobile, setUserMobile] = useState("");
     const [udob, setUserDOB] = useState("");
     const [ugender, setUserGender] = useState("");
-    const [upass, setUserPass] = useState("");
+    // const [upass, setUserPass] = useState("");
     const [msg, setMessage] = useState("");
 
     useEffect(() => {
         axios.get('https://news-app-back.herokuapp.com/user/update/' + uid)
             .then(response => {
-                setUserName(response.data[0].name);
-                setUserEmail(response.data[0].email);
-                setUserMobile(response.data[0].mobile);
-                setUserDOB(response.data[0].dob);
-                setUserGender(response.data[0].gender);
-                setUserPass(response.data[0].password);
+                setUserName(response.data.name);
+                setUserEmail(response.data.email);
+                setUserMobile(response.data.mobile);
+                setUserDOB(response.data.dob);
+                setUserGender(response.data.gender);
+                // setUserPass(response.data[0].password);
 
                 // setNewsList(response.data);
             })
@@ -62,10 +62,10 @@ function UpdateProf() {
                 setUserGender(e.target.value);
                 setMessage("");
             }
-            const onChangeUserPass = (e) => {
-                setUserPass(e.target.value);
-                setMessage("");
-            }
+            // const onChangeUserPass = (e) => {
+            //     setUserPass(e.target.value);
+            //     setMessage("");
+            // }
 
             const handleSubmit = (evt) => {
                 evt.preventDefault();
@@ -76,17 +76,22 @@ function UpdateProf() {
                 const userinfo = {
                     uid: uid,
                     uname: uname,
-                    uemail: uemail,
+                    // uemail: uemail,
                     umobile: umobile,
                     udob: udob,
                     ugender: ugender,
-                    upass: upass,
+                    // upass: upass,
                 }
 
                 axios.post('https://news-app-back.herokuapp.com/user/update', userinfo)
                     .then(res => {
+                        if (res.data.message) {
+                            alert(res.data.message)
+                        }
+                        else {
+                            setMessage(res.data.msg)
+                        }
                         // console.log(res.data)
-                        setMessage('UPDATE SUCCESSFUL')
                     })
                     .catch(err => {
                         console.log(err);
@@ -143,10 +148,10 @@ function UpdateProf() {
                                         </select>
                                     </div>
 
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} />
-                                    </div>
+                                    </div> */}
 
                                     <input type="submit" value="UPDATE" className="btn btn-danger" />
 
@@ -207,10 +212,10 @@ function UpdateProf() {
                                         </select>
                                     </div>
 
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Enter password" name="password" value={upass} disabled />
-                                    </div>
+                                    </div> */}
                                 </form>
                             </Col>
                             <Col md={2}></Col>

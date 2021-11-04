@@ -11,7 +11,7 @@ function MyNavbar() {
         return (
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand as={Link} to="/adminpanel">Times of GMIT</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">Times of GMIT</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
@@ -41,7 +41,7 @@ function MyNavbar() {
         return (
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand as={Link} to="/userpanel">Times of GMIT</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">Times of GMIT</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">

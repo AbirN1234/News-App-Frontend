@@ -3,7 +3,8 @@ import axios from "axios";
 import MyNavbar from "./Navbar";
 import { Redirect } from "react-router";
 import { Button, Col, Container, Row } from "react-bootstrap";
-// import { propTypes } from "react-bootstrap/esm/Image";
+
+// https://news-app-back.herokuapp.com/
 
 function AdminViewMessage(props) {
     // const [msg, setMsg] = useState("");

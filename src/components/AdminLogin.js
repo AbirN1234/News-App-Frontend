@@ -30,8 +30,7 @@ function AdminLogin(props) {
                 }
                 else if (res.data === 1) {
                     sessionStorage.setItem("admin", admin);
-                    props.history.push('/adminpanel')
-
+                    props.history.push('/')
                 }
                 // console.log(res);
             })
@@ -42,6 +41,14 @@ function AdminLogin(props) {
 
     }
 
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
     return (
         <>
             <MyNavbar />
@@ -61,10 +68,17 @@ function AdminLogin(props) {
                             </div>
                             <div className="form-group">
                                 <label>Password</label>
-                                <input type="password" className="form-control" placeholder="Enter password" name="password" value={pass}
+                                <input type="password" id="myInput" className="form-control" placeholder="Enter password" name="password" value={pass}
                                     onChange={onChangePass} required />
+                                {/* <input type="checkbox" onClick={() => myFunction()} />Show Password */}
+                                <Form.Check
+                                    type="switch"
+                                    id="custom-switch"
+                                    label="Show/Hide Password"
+                                    onClick={() => myFunction("myInput")}
+                                />
                             </div>
-                            <input type="submit" value="ADMIN LOGIN" className="btn btn-danger" />
+                            <input type="submit" value="ADMIN LOGIN" className="btn btn-success" />
                         </Form>
                     </Col>
                     <Col md={2}></Col>

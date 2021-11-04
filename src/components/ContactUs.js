@@ -59,6 +59,7 @@ function ContactUs() {
                             <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="..." />
                             <h2>Contact Us</h2>
                             <h4>We would love to hear from you !</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.930387557286!2d88.43892795764343!3d22.378370286617443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe18407a46f2e97f6!2sGargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1635777089195!5m2!1sen!2sin" title="Gmit college" width="220" height="290" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </Col>
                     <Col md={9}>
