@@ -208,12 +208,12 @@ function UserLogin(props) {
                                     </div>
                                     <div className="form-group">
                                         <label>New Password</label>
-                                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}" maxLength={30} className="form-control" value={npass} onChange={onChangeNPass} placeholder="New Password" id="npass" required />
+                                        <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$" maxLength={20} className="form-control" value={npass} onChange={onChangeNPass} placeholder="New Password" id="npass" required />
                                         <input type="checkbox" onClick={() => myFunction("npass")} />Show Password
                                     </div>
                                     <div className="form-group">
                                         <label>Confirm Password</label>
-                                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}" maxLength={30} className="form-control" value={cpass} onChange={onChangeCPass} placeholder="Confirm Password" id="cpass" required />
+                                        <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$" maxLength={20} className="form-control" value={cpass} onChange={onChangeCPass} placeholder="Confirm Password" id="cpass" required />
                                         <input type="checkbox" onClick={() => myFunction("cpass")} />Show Password
                                     </div>
                                     <input type="submit" className="btn btn-success" value="Change Password" />
