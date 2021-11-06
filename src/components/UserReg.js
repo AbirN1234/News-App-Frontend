@@ -113,7 +113,7 @@ function UserReg() {
 
                             <div className="form-group">
                                 <label>Password</label>
-                                <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$” maxLength={20} className="form-control" id="psw" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} required />
+                                <input type="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$" maxLength={20} className="form-control" id="psw" placeholder="Enter password" name="password" value={upass} onChange={onChangeUserPass} required />
                                 {/* <input type="checkbox" onClick={() => myFunction()} />Show Password */}
                                 <Form.Check
                                     type="switch"
